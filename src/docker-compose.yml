@@ -5,8 +5,33 @@ networks:
 volumes:
   postgres_data:
   media:
+  vault_data:
 
 services:
+  vault:
+    container_name: vault
+    build:
+      context: ./vault
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+      - vault/.env
+    volumes:
+      - ./vault/logs:/var/log
+      - vault_data:/vault/file
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - dev-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8200/v1/sys/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
   auth:
     container_name: auth
     build:
@@ -48,6 +73,8 @@ services:
     depends_on:
       auth:
         condition: service_started
+      vault:
+        condition: service_healthy
 
   chat:
     container_name: chat
