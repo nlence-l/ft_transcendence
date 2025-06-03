@@ -1,0 +1,21 @@
+/* Section home */
+.home {
+    justify-content: space-between;
+}
+
+/* Informations des joueurs */
+.player-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.player-name {
+    width: 20%;
+    padding: 0.5rem;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+}

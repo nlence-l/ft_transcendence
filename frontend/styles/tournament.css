@@ -1,0 +1,50 @@
+.tournament-container {
+    text-align: center;
+}
+
+.bracket {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 80%;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+	align-items: baseline;
+}
+
+.team-name {
+    font-size: 1.2em;
+}
+
+.vs {
+    font-size: 1.2em;
+    color: #888;
+}
+
+.score {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.btn-tournament-inactive
+{
+	background-color: red;
+}
+
+.btn-tournament-inactive:hover
+{
+	background-color: red;
+}

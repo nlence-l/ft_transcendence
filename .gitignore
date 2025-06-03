@@ -1,0 +1,40 @@
+# .env
+# certs/
+
+**env/
+
+# Django generated files
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+db.sqlite3
+**/migrations/
+
+# Static files and media
+**/staticfiles/
+# static/
+# media/
+
+# Logs
+*.log
+logs/
+
+# Avatars
+/media/avatars/user*
+
+# IDEs and tools
+.vscode/
+
+# media
+.my_env
+nginx/local.conf
+
+# mdjemaa
+*.pdf
+psql_friends_cmd.txt
+
+# jlecorne
+.DS_Store
+my_Dockerfile
+my_compose.yml
+my_frontend
